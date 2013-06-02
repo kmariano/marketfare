@@ -1,5 +1,19 @@
 var request = require('request');
 var http    = require('http');
+var fs      = require('fs');
+
+var monthNames =  { 1 :"Jan",
+                    2 : "Feb",
+                    3:"Mar",
+                    4: "Apr",
+                    5: "May",
+                    6: "June",
+                    7: "July",
+                    8: "Aug",
+                    9: "Sep",
+                    10: "Oct",
+                    11: "Nov",
+                    12: "Dec"};
 /*
  * GET users listing.
  */
@@ -22,6 +36,27 @@ exports.search = function(req,res){
 
       }
 
-});
+    });
+};
 
+//GET - seasonal product information
+exports.getSeasonalProducts = function(req,res){
+
+  var currentDate = new Date();
+  var monthName = monthNames[currentDate.getMonth() + 1];
+
+    fs.createReadStream("marketfare-seasonalinfo.csv", 'utf8', function(err, data){
+
+        if(err){
+            console.log("Could not read the file.");
+        }
+
+    });
+
+
+  //Based on the current date.
+  //Find the current month
+  //Open the CSV file and parse the list.
+  //Find all Products for the current month.
+  //return the list to the client.
 };

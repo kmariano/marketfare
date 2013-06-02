@@ -17,25 +17,18 @@
     <link href="../css/bootstrap-responsive.css" rel="stylesheet"/>
 
     <script src="../lib/jquery-1.9.1.js" ></script>
+    <script src="../lib/handlebars.js" ></script>
+    <script src="../lib/underscore.min.js" ></script>
     <script src="../lib/bootstrap.min.js" ></script>
+    <script src="../javascripts/models.js" />
+    <script src="../javascripts/views.js" />
 
+    <script id="product-list-template" type="text/x-handlebars-template" >
+        <div></div>
+    </script>
 </head>
 
 <body>
-
-<div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="navbar-inner">
-        <div class="container">
-            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="brand" href="#">Market Fare</a>
-        </div>
-    </div>
-</div>
-
 <div class="container">
     <div id="header" class="row">
         <h1>Market Fare</h1>
@@ -45,6 +38,9 @@
             <input type="text" name="zipCode" placeholder="Zip Code" />
             <input type="submit" name="Search" value="Search" class="btn btn-primary">
         </form>
+    </div>
+    <div id="product-list" class="row">
+
     </div>
 </div> <!-- /container -->
 
