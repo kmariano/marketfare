@@ -1,4 +1,3 @@
-
 /**
  * Module dependencies.
  */
@@ -36,7 +35,7 @@ app.get('/', function( req, res){
 });
 
 app.post('/market/find', market.search );
-app.post('/season/products', market.getSeasonalProducts);
+app.get('/season/products', market.getSeasonalProducts);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
