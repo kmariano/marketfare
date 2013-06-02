@@ -37,32 +37,53 @@
 </head>
 
 <body>
+
 <div class="container">
     <div id="header" class="row">
         <img id="logo" src="../img/art/MarketFare2.png"></img>
     </div>
     <div id="locationSearch" class="row">
-        <form method="POST" action="/market/find">
+
             <input type="text" name="zipCode" placeholder="Zip Code" />
-            <input type="submit" name="Search" value="Search" class="btn btn-primary">
-        </form>
-    </div>
-    <div id="product-list" class="row">
-        <div>
-         <input type="checkbox" value="Artichokes">
-         <input type="checkbox" value="Bananas">
-         <input type="checkbox" value="Cumumbers">
-
-
-        </div>
-
+            <input type="button" name="Search" value="Search" class="btn btn-primary">
     </div>
     <div id="marketList" class="span5">
 
     </div>
+    <div id="product-list" class="row">
+     <ul></ul>
+
+    </div>
+
 </div> <!-- /container -->
 
+<script type="text/javascript">
+    $(document).ready(function(){
+      $('input[name="Search"]').click(function(){
 
+          var zipcode = $('#locationSearch input[name="zipCode"]').val();
+
+          $.ajax({
+              type: "POST",
+              url: '/market/find',
+              data: {"zipCode" : zipcode},
+              success: function( data ){
+                  console.log( data.results);
+                  var results = data.results;
+                  $.each( results, function(index ){
+                      $('#product-list>ul').append('<li>' + results[index].marketname +  '</li>');
+
+                  })
+
+              },
+              dataType: 'json'
+          });
+
+      });
+
+    }) ;
+
+</script>
 
 </body>
 </html>
