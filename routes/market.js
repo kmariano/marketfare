@@ -18,10 +18,7 @@ exports.search = function(req,res){
 
       if(response.statusCode == 200 )
       {
-          if( body.results ){
-
-              res.send(body.results);
-          }
+        res.send(body);
 
       }
 
