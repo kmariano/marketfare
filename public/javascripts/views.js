@@ -1,14 +1,17 @@
 
 
-marketfare.views.MarketListView = Backbone.View.extend({
+marketfare.MarketListView = Backbone.View.extend({
 
     render: function(){}
 });
 
 
 
-marketfare.views.ProductListView = Backbone.View.extend({
+marketfare.ProductListView = Backbone.View.extend({
 
-    render: function(){}
+    render: function(){
+
+
+    }
 
 });
