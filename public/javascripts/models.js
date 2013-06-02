@@ -13,7 +13,12 @@ marketfare.models.Market = Backbone.Model.extend({
 marketfare.Product = Backbone.Model.extend({});
 
 
-marketfare.models.ProductList = Backbone.Collection.extend({});
+marketfare.models.ProductList = Backbone.Collection.extend({
+
+    model: marketfare.models.Product
+});
 
 
-marketfare.models.MarketList = Backbone.Collection.extend({});
+marketfare.models.MarketList = Backbone.Collection.extend({
+    model: marketfare.models.Market
+});
