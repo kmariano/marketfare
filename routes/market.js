@@ -33,7 +33,6 @@ exports.search = function(req,res){
       if(response.statusCode == 200 )
       {
         res.send(body);
-
       }
 
     });
@@ -44,13 +43,16 @@ exports.getSeasonalProducts = function(req,res){
 
   var currentDate = new Date();
   var monthName = monthNames[currentDate.getMonth() + 1];
+  var fileName = 'products.json';
+  var dirname = __dirname+"/../data/"
 
-    fs.createReadStream("marketfare-seasonalinfo.csv", 'utf8', function(err, data){
-
+    fs.readFile(dirname+"products.json", 'utf8', function(err, data){
         if(err){
             console.log("Could not read the file.");
+            return;
         }
-
+        products = JSON.parse(data);
+        res.send(products); 
     });
 
 
