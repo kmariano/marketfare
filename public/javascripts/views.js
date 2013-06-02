@@ -10,4 +10,5 @@ marketfare.views.MarketListView = Backbone.View.extend({
 marketfare.views.ProductListView = Backbone.View.extend({
 
     render: function(){}
+
 });

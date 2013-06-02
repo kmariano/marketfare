@@ -16,6 +16,7 @@ marketfare.Product = Backbone.Model.extend({});
 marketfare.models.ProductList = Backbone.Collection.extend({
 
     model: marketfare.models.Product
+
 });
 
 
