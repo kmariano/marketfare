@@ -37,10 +37,15 @@
 </div>
 
 <div class="container">
-
-    <h1>Bootstrap starter template</h1>
-    <p>Use this document as a way to quick start any new project.<br> All you get is this message and a barebones HTML document.</p>
-
+  <div id="header" class="row">
+    <h1>Market Fare</h1>
+  </div>
+  <div id="locationSearch" class="row">
+    <form method="POST" action="/market/find">
+        <input type="text" name="zipCode" placeholder="Zip Code" />
+        <input type="submit" name="Search" value="Search" class="btn btn-primary">
+    </form>
+  </div>
 </div> <!-- /container -->
 
 
